@@ -4,11 +4,11 @@
 <p></p>
 
 ## System Parameters 
-Block size = 128 MB
-N (replication factor) = 3 
-Block Report Frequency = every 30 sec.
-Node Failure Time = 60 sec. (two missed heartbeats)
-Heartbeat = synonymous with block reports 
+* Block size = 128 MB
+* N (replication factor) = 3 
+* Block Report Frequency = every 30 sec.
+* Node Failure Time = 60 sec. (two missed heartbeats)
+* Heartbeat = synonymous with block reports 
 
 ## Design
 <img src="/SequenceDiagrams/CreateWrite.png"/>
