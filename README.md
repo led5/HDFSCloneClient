@@ -21,5 +21,4 @@
 ## Stack 
 `Python,
 AWS EC2 and S3, 
-PyCharm, 
-CodeCommit` 
+PyCharm` 
