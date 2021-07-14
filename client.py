@@ -25,13 +25,13 @@ class Client:
         self.s3_data_blocks = None
 
     def get_data(self):
-        """To download input file from S3 bucket."""
+        """Download input file from S3 bucket."""
 
-        # Establish connection with S3 bucket:
+        # Establish connection with S3 bucket
         s3 = boto3.client('s3', region_name=self.s3_region_name, aws_access_key_id=self.aws_access_key,
                           aws_secret_access_key=self.aws_secret_key)
 
-        # Save data_filename_s3 to data_filename_local:
+        # Save data_filename_s3 to data_filename_local
         s3.download_file(self.s3_bucket_name, self.data_filename_s3, self.data_filename_local)
         self.s3_data_size = os.stat(self.data_filename_local).st_size
 
@@ -104,7 +104,7 @@ class Client:
             responses
 
         """
-        # Request LoB from NameNode:
+        # Request LoB from NameNode
         params = {sufs_filename: size_in_bytes} # {nameofnewfile: size_in_bytes}
         url = self.name_node_url + '/create'
         response = requests.get(url, params)
@@ -151,7 +151,6 @@ class Client:
             for block_data in data_list:
                 for line in block_data:
                     f.write(line)
-        #print(key_order)
 
     def read(self, sufs_filename, local_filename):
         """
@@ -166,17 +165,17 @@ class Client:
             
         """
 
-        # Request file from SUFS:
+        # Request file from SUFS
         params = {sufs_filename: sufs_filename}
         url = self.fix_extension(self.name_node_url, '/read')
         response = requests.get(url, params)
 
-        # Check NameNode response:
+        # Check NameNode response
         if response.status_code != 200:
             raise Exception('Name node response to read: {0}'.format(response.status_code))
         resp = response.json() # {block_id: [url1, url2, url3....]}
 
-        # Read block from data nodes:
+        # Read block from data nodes
         blocks = {} # {block_id: data}
         for block in resp:
             successfully_retrieved_block = False
@@ -195,15 +194,14 @@ class Client:
     def list(self, filename):
         """Display file."""
 
-        # Request LoB for filename from NameNode:
+        # Request LoB for filename from NameNode
         url = self.fix_extension(self.name_node_url, '/list')
         parameters = {filename: filename}
         response = requests.get(url=url, params=parameters)
 
-        # Check NameNode Response:
+        # Check NameNode Response
         if response.status_code != 200:
             raise Exception('name node returned status code {0}'.format(response.status_code))
         data = response.json()
         print(data)
 
-        return data
