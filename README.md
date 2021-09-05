@@ -1,14 +1,17 @@
 ## Introduction 
-<p></p>
-<p>The Client Node for the HDFS Clone project in CPSC 4910-01 Cloud Computing. Designed, developed and tested by Audrey Routt and Dalena Le.</p>
-<p></p>
+```
+The Client Node for the HDFS Clone project in CPSC 4910-01 Cloud Computing. 
+Designed, developed and tested by Audrey Routt and Dalena Le.
+``` 
 
-## System Parameters 
+## System Parameters
+```
 * Block size = 128 MB
 * N (replication factor) = 3 
 * Block Report Frequency = every 30 sec.
 * Node Failure Time = 60 sec. (two missed heartbeats)
 * Heartbeat = synonymous with block reports 
+```
 
 ## Design
 <img src="/SequenceDiagrams/CreateWrite.png"/>
@@ -19,6 +22,4 @@
 <b><div align="center">Diagram 3. Node Failure</b></div>
 
 ## Stack 
-`Python,
-AWS EC2 and S3, 
-PyCharm` 
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
