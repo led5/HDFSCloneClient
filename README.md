@@ -1,6 +1,6 @@
 ## Introduction 
 ```
-The Client Node for the HDFS Clone project in CPSC 4910-01 Cloud Computing. 
+The Client for an HDFS Clone project in CPSC 4910-01 Cloud Computing. 
 Designed, developed and tested by Audrey Routt and Dalena Le.
 ``` 
 
